@@ -147,15 +147,20 @@
 {
         "layer" : "top",
         "position" : "left",
-        "width" : 10,
-        "height" : 300,
+        "height" : 250,
         "margin-left" : 3,
-        "margin-right" : 2,
+        "name" : "gambar-wrksp",
         "modules-center" : [
             "niri/workspaces"
         ],
         "niri/workspaces" : {
             // To configure
-            "disable-click" : true
-        }
+            "format": "{icon}",
+            "format-icons":{
+                "browser": "",
+                "steam": "",
+            },
+            "disable-click" : true,
+        },
+        "reload_style_on_change" : true
 }]

@@ -5,33 +5,23 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
+    background-color: rgba(43, 48, 59, 1);
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
+window#waybar.gambar-wrksp{
     border: none;
+    background-color: rgba(255,165, 0, 0.75);
+    border-radius: 10px;
+}
+
+window#waybar.gambar-wrksp #workspaces button.active {
+    border: 1px solid rgba(160, 100, 0, 1);
+    background-color: orange;
+    border-radius: 200px;
 }
 
 button {
