@@ -159,6 +159,12 @@
             "format-icons":{
                 "browser": "",
                 "steam": "",
+                "code": "",
+                "audio": "",
+                "discord": "",
+                
+                // Icons by state
+		"default": ""
             },
             "disable-click" : true,
         },
