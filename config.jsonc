@@ -6,10 +6,12 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
+    "name": "gambar-top",
     "modules-left": [
         "custom/media"
     ],
     "modules-center": [
+        "clock"
     ],
     "modules-right": [
         "idle_inhibitor",
@@ -21,7 +23,6 @@
         "backlight",
         "keyboard-state",
         "battery",
-        "clock",
         "tray",
         "custom/power"
     ],
@@ -50,8 +51,8 @@
         // }
     },
     "clock": {
-        "tooltip-format": "{:%a %F}\n<tt>{calendar}</tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%a, %d/%m/%Y | %H:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>",
     },
     "cpu": {
         "format": "{usage}% ",
@@ -142,7 +143,9 @@
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
-    }
+    },
+
+    "reload_style_on_change" : true
 },
 {
         "layer" : "top",
@@ -162,11 +165,12 @@
                 "code": "",
                 "audio": "",
                 "discord": "",
-                
+                "obs": "", 
                 // Icons by state
 		"default": ""
             },
             "disable-click" : true,
         },
-        "reload_style_on_change" : true
+
+    "reload_style_on_change" : true
 }]
