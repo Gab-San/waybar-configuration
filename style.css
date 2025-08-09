@@ -47,19 +47,90 @@ window.gambar-wrksp #workspaces button#niri-workspace-steam.active {
     background-color: rgba(0, 48, 73, 1);
 }
 
+window.gambar-wrksp #workspaces button#niri-workspace-obs.active {
+    background-color: rgba(154, 3, 30, 0.7);
+}
 
 /* CONFIGURATION FOR TOP BAR */
 
-window.gambar-top#waybar .modules-center {
-    padding: 10px 10px;
+window.gambar-top#waybar #clock {
+    margin: 5px 5px 2px 2px;
+    padding: 7px 20px;
     border: solid 3px rgba(95, 15, 64, 1);
     background-color: rgba(95, 15, 64, 1);
     border-radius: 100px; 
-}
-
-window.gambar-top#waybar .modules-center #clock {
     font-size: 15px;
     color: #ffffff;
+}
+
+window.gambar-top#waybar .modules-left {
+    margin: 5px 5px;
+    padding: 0px 10px;
+}
+
+#tray {
+    background-color: rgba(15, 76, 92, 0.85);
+    color: #ffffff;
+    border-radius: 100px;
+    padding: 0px 30px;
+}
+
+#tray menu {
+    background-color: rgba(15, 76, 92, 1);
+    color: #ffffff;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#power-profiles-daemon {
+    padding: 0px 10px; 
+    margin: 0px 5px;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.performance {
+    background-color: rgba(154, 3, 30, 0.9);
+}
+
+#power-profiles-daemon.balanced {
+    background-color: rgba(15, 76, 92, 0.85);
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: rgba(33, 158, 188, 0.9);
+}
+
+#bluetooth {
+    padding: 0px 5px;
+    background-color: rgba(15, 76, 92, 0.85);
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 15px;
+    box-shadow: inset 0 -2px rgba(255,255,255,0.5);
+}
+
+#bluetooth.connected {
+    background-color: rgba(255, 183, 3, 0.8);
+}
+
+#bluetooth.on {
+    background-color: rgba(42, 157, 143, 0.85);
+}
+
+#bluetooth.off {
+    background-color: rgba(154, 3, 30, 0.85);
+}
+
+#bluetooth.discovering {
+    background-color: rgba(15, 76, 92, 0.85);
 }
 
 /* you can set a style on hover for any module like this */
@@ -82,11 +153,9 @@ window.gambar-top#waybar .modules-center #clock {
 #pulseaudio,
 #wireplumber,
 #custom-media,
-#tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#power-profiles-daemon,
 #mpd {
     padding: 0 10px;
     color: #ffffff;
@@ -94,16 +163,6 @@ window.gambar-top#waybar .modules-center #clock {
 
 #window{
     margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
 }
 
 #battery {
@@ -132,25 +191,6 @@ window.gambar-top#waybar .modules-center #clock {
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
 }
 
 label:focus {
@@ -220,19 +260,6 @@ label:focus {
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: #2980b9;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
 

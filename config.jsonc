@@ -7,24 +7,49 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "name": "gambar-top",
+    // ------- LEFT MODULES SECTION --------
     "modules-left": [
+        "tray",
+        "power-profiles-daemon",
+        "bluetooth",
         "custom/media"
     ],
-    "modules-center": [
-        "clock"
-    ],
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10,
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "bluetooth": {
+        "format-connected": "··",
+        "format-on": "",
+        "format-off": "!",
+    },
+    "modules-center": [],
     "modules-right": [
         "idle_inhibitor",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
         "backlight",
         "keyboard-state",
         "battery",
-        "tray",
-        "custom/power"
+        "custom/power",
+        "clock"
     ],
     "keyboard-state": {
         "numlock": true,
@@ -42,14 +67,7 @@
             "deactivated": ""
         }
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10,
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
-    },
+    
     "clock": {
         "format": "{:%a, %d/%m/%Y | %H:%M}",
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -144,7 +162,6 @@
 			"hibernate": "systemctl hibernate"
 		}
     },
-
     "reload_style_on_change" : true
 },
 {
