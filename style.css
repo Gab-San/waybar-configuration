@@ -8,11 +8,21 @@ window#waybar {
     background-color: transparent;
 }
 
-/* CONFIGURATION FOR WORKSPACE BAR */
+tooltip {
+    background-color: rgba(15, 76, 92, 0.9);
+}
 
-window.gambar-wrksp#waybar{
-    border: none;
+tooltip label {
+    font-size: 15px;
+}
+
+/* CONFIGURATION FOR LEFT BAR */
+
+/* ------ CENTER MODULES -------*/
+
+window#waybar.gambar-left .modules-center  {
     background-color: rgba(255, 136, 0, 0.75);
+    padding: 40px 0px;
     border-radius: 10px;
 }
 
@@ -21,7 +31,7 @@ window.gambar-wrksp#waybar{
 }
 
 #workspaces button {
-    padding: 0px 8px;
+    padding: 0px 7px;
     color: #ffffff;
 }
 
@@ -31,43 +41,77 @@ window.gambar-wrksp#waybar{
     box-shadow: none;
 }
 
-window.gambar-wrksp #workspaces button.active {
+window#waybar.gambar-left #workspaces button.active {
     background-color: rgba(251, 139, 36, 1);
     border-radius: 200px;
     box-shadow: inset 0 -3px rgba(255,255,255,0.5);
 }
 
 
-window.gambar-wrksp #workspaces button#niri-workspace-discord.active {
+window#waybar.gambar-left #workspaces button#niri-workspace-discord.active {
     background-color: rgba(114,137,218,1);
 }
 
 
-window.gambar-wrksp #workspaces button#niri-workspace-steam.active {
+window#waybar.gambar-left #workspaces button#niri-workspace-steam.active {
     background-color: rgba(0, 48, 73, 1);
 }
 
-window.gambar-wrksp #workspaces button#niri-workspace-obs.active {
+window#waybar.gambar-left #workspaces button#niri-workspace-video.active {
     background-color: rgba(154, 3, 30, 0.7);
 }
 
+/* ------ BOTTOM MODULES -----*/
+
+#gamemode {
+    background-color: rgba(251, 139, 36, 0.85);
+    padding: 8px 0px 8px 8px;
+    border-radius: 17px;
+}
+
+#gamemode.running {
+    color: #9A031E;
+}
+
+#backlight {
+    padding: 7px 0px;
+    background-color: rgba(144, 177, 177, 0.85);
+    color: #ffffff;
+    border-radius: 14px;
+}
+
+#network {
+    border-radius: 200px;
+    padding: 8px 0px;
+    color: #ffffff;
+    background-color: rgba(42, 157, 143, 0.85);
+}
+
+#network.disconnected {
+    background-color: rgba(154, 3, 30, 0.85);
+    font-size: 16px;
+}
+
+#network.disabled {
+    background-color: rgba(15, 76, 92, 0.9);
+}
+
+#idle_inhibitor {
+    padding: 10px 0px;
+    color: #ffffff;
+    background-color: rgba(15, 76, 92, 0.85);
+    border-radius: 15px;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+
 /* CONFIGURATION FOR TOP BAR */
 
-window.gambar-top#waybar #clock {
-    margin: 5px 5px 2px 2px;
-    padding: 7px 20px;
-    border: solid 3px rgba(95, 15, 64, 1);
-    background-color: rgba(95, 15, 64, 1);
-    border-radius: 100px; 
-    font-size: 15px;
-    color: #ffffff;
-}
-
-window.gambar-top#waybar .modules-left {
-    margin: 5px 5px;
-    padding: 0px 10px;
-}
-
+/*----------- LEFT MODULES -------------*/
 #tray {
     background-color: rgba(15, 76, 92, 0.85);
     color: #ffffff;
@@ -91,7 +135,6 @@ window.gambar-top#waybar .modules-left {
 
 #power-profiles-daemon {
     padding: 0px 10px; 
-    margin: 0px 5px;
     border-radius: 10px;
     color: #ffffff;
 }
@@ -109,7 +152,7 @@ window.gambar-top#waybar .modules-left {
 }
 
 #bluetooth {
-    padding: 0px 5px;
+    padding: 0px 8px;
     background-color: rgba(15, 76, 92, 0.85);
     color: #ffffff;
     border-radius: 20px;
@@ -122,7 +165,8 @@ window.gambar-top#waybar .modules-left {
 }
 
 #bluetooth.on {
-    background-color: rgba(42, 157, 143, 0.85);
+    background-color: rgba(100, 177, 100, 0.9);
+    /* background-color: rgba(56, 176, 0, 0.85); */
 }
 
 #bluetooth.off {
@@ -130,49 +174,55 @@ window.gambar-top#waybar .modules-left {
 }
 
 #bluetooth.discovering {
-    background-color: rgba(15, 76, 92, 0.85);
+    background-color: rgba(42, 157, 143, 0.85);
 }
 
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
+/* ------- CENTER MODULES ---------- */
+
+#custom-media {
+    background-color: rgba(251, 139, 36, 0.8);
+    border-radius: 100px;
+    padding: 0px 10px 0px 17px;
 }
 
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+#custom-media.custom-spotify {
+    background-color: rgba(38, 166, 91, 0.8);
 }
 
-#battery,
+/* -------- RIGHT MODULES --------- */
+
+#wireplumber {
+    background-color: rgba(251, 139, 36, 0.9);
+}
+
+
 #cpu,
 #memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#mpd {
-    padding: 0 10px;
+#wireplumber
+{
+    padding: 0px 8px;
+    border-radius: 10px;
     color: #ffffff;
 }
 
-#window{
-    margin: 0 4px;
+#cpu {
+    background-color: rgba(227, 100, 20, 0.9);
+}
+
+#memory {
+    background-color: rgba(95, 15, 64, 0.85);
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    padding: 0px 8px;
+    border-radius: 12px;
+    background-color: rgba(15, 76, 92, 1);
+    color: #ffffff;
 }
 
 #battery.charging, #battery.plugged {
     color: #ffffff;
-    background-color: #26A65B;
+    background-color: rgba(38, 166, 91, 0.9);
 }
 
 @keyframes blink {
@@ -193,151 +243,19 @@ window.gambar-top#waybar .modules-left {
     animation-direction: alternate;
 }
 
-label:focus {
-    background-color: #000000;
+#clock {
+    padding: 0px 20px;
+    border: solid 3px rgba(95, 15, 64, 1);
+    background-color: rgba(95, 15, 64, 1);
+    border-radius: 100px; 
+    font-size: 15px;
+    color: #ffffff;
 }
 
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
+#user {
+    background-color: rgba(95, 15, 64, 1);
+    color: #ffffff;
+    border-radius: 100px;
 }
 
-#memory {
-    background-color: #9b59b6;
-}
 
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
-#network {
-    background-color: #2980b9;
-}
-
-#network.disconnected {
-    background-color: #f53c3c;
-}
-
-#pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
-}
-
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
-}
-
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
-}
-
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 5px;
-    color: white;
-}
-
-#privacy-item.screenshare {
-    background-color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    background-color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    background-color: #0069d4;
-}

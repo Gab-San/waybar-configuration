@@ -1,18 +1,14 @@
 // -*- mode: jsonc -*-
 [{
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
     "name": "gambar-top",
+    "margin": "5 10 0 10",
     // ------- LEFT MODULES SECTION --------
     "modules-left": [
         "tray",
         "power-profiles-daemon",
         "bluetooth",
-        "custom/media"
     ],
     "tray": {
         // "icon-size": 21,
@@ -38,52 +34,55 @@
         "format-on": "",
         "format-off": "!",
     },
-    "modules-center": [],
+    // ----- CENTER MODULES -------
+    "modules-center": [
+        "custom/media",
+    ],
+    "custom/media": {
+        "format": "{text} {icon} ",
+        "format-icons": {
+            "spotify": "",
+            "default": "🎵"
+        },
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
+    },
+    "custom/spotify": {
+        "format": "{text} {icon} ",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "interval": 30, // Remove this if your script is endless and write in loop
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+        "exec-if": "pgrep spotify",
+    },
+    // ------ RIGHT MODULES -------
     "modules-right": [
-        "idle_inhibitor",
-        "pulseaudio",
-        "network",
+        "wireplumber",
         "cpu",
         "memory",
-        "backlight",
-        "keyboard-state",
         "battery",
-        "custom/power",
-        "clock"
+        "clock",
+        "user"
     ],
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    
-    "clock": {
-        "format": "{:%a, %d/%m/%Y | %H:%M}",
-        "tooltip-format": "<tt>{calendar}</tt>",
+    "wireplumber": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",  
+        "format-icons": ["", "", ""],
+        "max-volume": 100.0,
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": true,
     },
     "memory": {
         "format": "{}% "
     },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-	"format-icons": [ "🌕", "🌖", "🌗",  "🌘", "🌑"]
-    },
+    
     "battery": {
         "states": {
             // "good": 95,
@@ -94,9 +93,7 @@
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        "format-time": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
     "power-profiles-daemon": {
@@ -110,66 +107,80 @@
         "power-saver": ""
       }
     },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
+    //"pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+    //    "format": "{volume}% {icon} {format_source}",
+    //    "format-bluetooth": "{volume}% {icon} {format_source}",
+    //    "format-bluetooth-muted": " {icon} {format_source}",
+    //    "format-muted": " {format_source}",
+    //    "format-source": "{volume}% ",
+    //    "format-source-muted": "",
+    //    "format-icons": {
+    //        "headphone": "",
+    //        "hands-free": "",
+    //        "headset": "",
+    //        "phone": "",
+    //        "portable": "",
+    //        "car": "",
+    //        "default": ["", "", ""]
+    //    },
+    //    "on-click": "pavucontrol"
+    //},
+    "clock": {
+        "format": "{:%a, %d/%m/%Y | %H:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>",
     },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+    "user": {
+        "format": "",
+        "icon": true,
+        "width": 40,
+        "height": 40,
     },
     "reload_style_on_change" : true
 },
 {
         "layer" : "top",
         "position" : "left",
-        "height" : 250,
-        "margin-left" : 3,
-        "name" : "gambar-wrksp",
+        "name" : "gambar-left",
+        "margin-left": 5,
+        "margin-bottom": 30,
+        "spacing": 4,
+
+        // ------ BOTTOM SPACE -------
+        "modules-right": [
+            "gamemode",
+            "backlight",
+            "network",
+            "idle_inhibitor",
+        ],
+        "gamemode": {
+            "format-alt": "",
+        },
+        "backlight": {
+            // "device": "acpi_video1",
+            "format": "{icon}",
+            "format-icons": [ "🌕", "🌖", "🌗",  "🌘", "🌑"],
+            "tooltip-format":"{percent}% {icon}",
+        },
+        "network": {
+            // "interface": "wlp2*", // (Optional) To force the use of this interface
+            "format-wifi": "",
+            "format-ethernet": "",
+            "format-linked": "",
+            "format-disconnected": "⚠",
+            "format-disabled": "",
+            "tooltip-format": "{ifname} via {gwaddr} ",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) \n{ifname} via {gwaddr} ",
+        },
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "",
+                "deactivated": "",
+            }
+        },
+
+        // ------ CENTER SPACE ------
         "modules-center" : [
             "niri/workspaces"
         ],
@@ -182,12 +193,10 @@
                 "code": "",
                 "audio": "",
                 "discord": "",
-                "obs": "", 
-                // Icons by state
+                "video": "", 
 		"default": ""
             },
             "disable-click" : true,
         },
-
-    "reload_style_on_change" : true
+        "reload_style_on_change" : true
 }]
