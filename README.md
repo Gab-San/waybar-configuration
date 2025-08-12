@@ -42,6 +42,7 @@ The left bar is mainly used for the the workspaces, plus some minimal useful inf
 
 ### Bottom Modules
 
+- [Gamemode](https://github.com/Alexays/Waybar/wiki/Module:-Gamemode);
 - [Backlight](https://github.com/Alexays/Waybar/wiki/Module:-Backlight);
 - [Network](https://github.com/Alexays/Waybar/wiki/Module:-Network);
 - [Idle Inhibitor](https://github.com/Alexays/Waybar/wiki/Module:-Idle-Inhibitor);
