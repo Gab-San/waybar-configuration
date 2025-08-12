@@ -9,8 +9,6 @@
         "tray",
         "power-profiles-daemon",
         "niri/language",
-        "bluetooth",
-        "backlight",
         "network",
         "idle_inhibitor",
         "gamemode",
@@ -34,11 +32,6 @@
         "balanced": "",
         "power-saver": ""
       }
-    },
-    "bluetooth": {
-        "format-connected": "··",
-        "format-on": "",
-        "format-off": "!",
     },
     "privacy": {
         "icon-size": 17,
@@ -64,12 +57,7 @@
     "gamemode": {
         "format-alt": "",
     },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{icon}",
-        "format-icons": [ "🌕", "🌖", "🌗",  "🌘", "🌑"],
-        "tooltip-format":"{percent}% {icon}",
-    },
+    
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "",
@@ -132,14 +120,19 @@
         },
     // ------ RIGHT MODULES -------
     "modules-right": [
+        "bluetooth",
         "wireplumber",
-        "cpu",
-        "memory",
+        "backlight",
         "battery",
         "clock",
         "user",
         "custom/powermenu",
     ],
+    "bluetooth": {
+        "format-connected": "··",
+        "format-on": "",
+        "format-off": "!",
+    },
     "wireplumber": {
         "format": "{volume}% {icon} {format_source}",
         "format-muted": " {format_source}",
@@ -148,14 +141,12 @@
         "format-icons": ["", "", ""],
         "max-volume": 100.0,
     },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": true,
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon}",
+        "format-icons": [ "🌕", "🌖", "🌗",  "🌘", "🌑"],
+        "tooltip-format":"{percent}% {icon}",
     },
-    "memory": {
-        "format": "{}% "
-    },
-    
     "battery": {
         "states": {
             "warning": 30,

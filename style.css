@@ -16,17 +16,12 @@ tooltip label {
     font-size: 15px;
 }
 
-/* CONFIGURATION FOR LEFT BAR */
+/*----------- LEFT MODULES -------------*/
 
-/* ------ CENTER MODULES -------*/
-#workspaces {
-    background-color: rgba(255, 136, 0, 0.75);
-    padding: 0px 8px;
-    border-radius: 10px;
-}
-
-#workspaces button {
-    padding: 0px 7px;
+#network,
+#idle_inhibitor 
+{
+    padding: 0px 10px;
     color: #ffffff;
 }
 
@@ -59,7 +54,7 @@ tooltip label {
 
 #gamemode {
     background-color: rgba(251, 139, 36, 0.85);
-    padding: 8px 0px 8px 8px;
+    padding: 8px 4px 8px 8px;
     border-radius: 17px;
 }
 
@@ -67,17 +62,8 @@ tooltip label {
     color: #9A031E;
 }
 
-#backlight {
-    padding: 7px 0px;
-    background-color: rgba(144, 177, 177, 0.85);
-    color: #ffffff;
-    border-radius: 14px;
-}
-
 #network {
     border-radius: 200px;
-    padding: 8px 0px;
-    color: #ffffff;
     background-color: rgba(42, 157, 143, 0.85);
 }
 
@@ -91,8 +77,6 @@ tooltip label {
 }
 
 #idle_inhibitor {
-    padding: 10px 0px;
-    color: #ffffff;
     background-color: rgba(15, 76, 92, 0.85);
     border-radius: 15px;
 }
@@ -108,10 +92,6 @@ tooltip label {
     color: #ffffff;
     border-radius: 13px;
 }
-
-/* CONFIGURATION FOR TOP BAR */
-
-/*----------- LEFT MODULES -------------*/
 
 #tray,
 #tray menu,
@@ -202,7 +182,6 @@ tooltip label {
     background-color: rgba(38, 166, 91, 0.8);
 }
 
-
 /* -------- RIGHT MODULES --------- */
 
 #wireplumber {
@@ -213,11 +192,17 @@ tooltip label {
 #cpu,
 #memory,
 #wireplumber,
+#backlight,
 #custom-powermenu
 {
     padding: 0px 8px;
     border-radius: 10px;
     color: #ffffff;
+}
+
+#backlight {
+    background-color: rgba(144, 177, 177, 0.85);
+    border-radius: 20px;
 }
 
 #cpu {
