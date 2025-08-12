@@ -120,6 +120,7 @@ window#waybar.gambar-left #workspaces button#niri-workspace-video.active {
 /*----------- LEFT MODULES -------------*/
 
 #tray,
+#tray menu,
 #power-profiles-daemon,
 #bluetooth,
 #privacy
@@ -216,7 +217,8 @@ window#waybar.gambar-left #workspaces button#niri-workspace-video.active {
 
 #cpu,
 #memory,
-#wireplumber
+#wireplumber,
+#custom-powermenu
 {
     padding: 0px 8px;
     border-radius: 10px;
@@ -276,4 +278,8 @@ window#waybar.gambar-left #workspaces button#niri-workspace-video.active {
     border-radius: 100px;
 }
 
-
+#custom-powermenu {
+    padding: 0px 13px 0px 12px;
+    background-color: rgba(251, 139, 36, 1);
+    border-radius: 200px;
+}
