@@ -19,6 +19,7 @@ I have removed a couple of modules in order to make more space.
 - [Network](https://github.com/Alexays/Waybar/wiki/Module:-Network);
 - [Idle Inhibitor](https://github.com/Alexays/Waybar/wiki/Module:-Idle-Inhibitor);
 - [Privacy](https://github.com/Alexays/Waybar/wiki/Module:-Privacy);
+- [Gamemode](https://github.com/Alexays/Waybar/wiki/Module:-Gamemode);
 
 ## Center Modules
 
