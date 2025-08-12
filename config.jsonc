@@ -9,6 +9,7 @@
         "tray",
         "power-profiles-daemon",
         "bluetooth",
+        "privacy",
     ],
     "tray": {
         // "icon-size": 21,
@@ -33,6 +34,27 @@
         "format-connected": "··",
         "format-on": "",
         "format-off": "!",
+    },
+    "privacy": {
+        "icon-size": 17,
+        "expand": true,
+        "modules": [
+		{
+			"type": "screenshare",
+			"tooltip": true,
+			"tooltip-icon-size": 20 
+		},
+		{
+			"type": "audio-out",
+			"tooltip": true,
+			"tooltip-icon-size": 20
+		},
+		{
+			"type": "audio-in",
+			"tooltip": true,
+			"tooltip-icon-size": 20 
+		}
+	],
     },
     // ----- CENTER MODULES -------
     "modules-center": [
@@ -85,7 +107,6 @@
     
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -93,7 +114,6 @@
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-time": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
     "power-profiles-daemon": {
@@ -152,6 +172,7 @@
             "backlight",
             "network",
             "idle_inhibitor",
+            "niri/language",
         ],
         "gamemode": {
             "format-alt": "",
@@ -178,6 +199,9 @@
                 "activated": "",
                 "deactivated": "",
             }
+        },
+        "niri/language": {
+            "format": "{short} ({variant})",
         },
 
         // ------ CENTER SPACE ------

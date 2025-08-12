@@ -108,20 +108,33 @@ window#waybar.gambar-left #workspaces button#niri-workspace-video.active {
     color: #2d3436;
 }
 
+#language {
+    background-color: rgba(42, 157, 143, 0.85);
+    padding: 10px 6px;
+    color: #ffffff;
+    border-radius: 13px;
+}
 
 /* CONFIGURATION FOR TOP BAR */
 
 /*----------- LEFT MODULES -------------*/
+
+#tray,
+#power-profiles-daemon,
+#bluetooth,
+#privacy
+{
+    color: #ffffff;
+}
+
 #tray {
     background-color: rgba(15, 76, 92, 0.85);
-    color: #ffffff;
     border-radius: 100px;
     padding: 0px 30px;
 }
 
 #tray menu {
     background-color: rgba(15, 76, 92, 1);
-    color: #ffffff;
 }
 
 #tray > .passive {
@@ -136,7 +149,6 @@ window#waybar.gambar-left #workspaces button#niri-workspace-video.active {
 #power-profiles-daemon {
     padding: 0px 10px; 
     border-radius: 10px;
-    color: #ffffff;
 }
 
 #power-profiles-daemon.performance {
@@ -154,7 +166,6 @@ window#waybar.gambar-left #workspaces button#niri-workspace-video.active {
 #bluetooth {
     padding: 0px 8px;
     background-color: rgba(15, 76, 92, 0.85);
-    color: #ffffff;
     border-radius: 20px;
     font-size: 15px;
     box-shadow: inset 0 -2px rgba(255,255,255,0.5);
@@ -177,12 +188,19 @@ window#waybar.gambar-left #workspaces button#niri-workspace-video.active {
     background-color: rgba(42, 157, 143, 0.85);
 }
 
+#privacy {
+    background-color: rgba(154, 3, 30, 0.9);
+    padding: 0px 8px;
+    border-radius: 20px;
+}
+
 /* ------- CENTER MODULES ---------- */
 
 #custom-media {
     background-color: rgba(251, 139, 36, 0.8);
     border-radius: 100px;
     padding: 0px 10px 0px 17px;
+    color: #ffffff;
 }
 
 #custom-media.custom-spotify {
