@@ -2,48 +2,34 @@
 
 Welcome!
 
-This is my waybar configuration. It is composed of a top bar and a left bar.
+This is my waybar alternative configuration. 
 
-![gambar-screenshot](./imgs/waybar.png)
+![gambar-screenshot](./imgs/waybar-alternative.png)
 
-## Gambar Top
+This configuration saves space from the left side.
+I have removed a couple of modules in order to make more space.
 
-The top bar's main purpose is showing statuses.
-
-### Left Modules
+## Left Modules
 
 - [Tray](https://github.com/Alexays/Waybar/wiki/Module:-Tray);
 - [Power-Profiles-Daemon](https://github.com/Alexays/Waybar/wiki/Module:-PowerProfilesDaemon);
+- [Niri Language](https://github.com/Alexays/Waybar/wiki/Module:-Niri#language);
 - [Bluetooth](https://github.com/Alexays/Waybar/wiki/Module:-Bluetooth);
+- [Backlight](https://github.com/Alexays/Waybar/wiki/Module:-Backlight);
+- [Network](https://github.com/Alexays/Waybar/wiki/Module:-Network);
+- [Idle Inhibitor](https://github.com/Alexays/Waybar/wiki/Module:-Idle-Inhibitor);
 - [Privacy](https://github.com/Alexays/Waybar/wiki/Module:-Privacy);
 
-### Center Modules
+## Center Modules
 
 - [Media](https://github.com/Alexays/Waybar/wiki/Module:-Custom:-Examples);
+- [Niri Workspaces](https://github.com/Alexays/Waybar/wiki/Module:-Niri#workspaces);
 
-### Right Modules
+## Right Modules
 
 - [WirePlumber](https://github.com/Alexays/Waybar/wiki/Module:-WirePlumber);
-- [CPU](https://github.com/Alexays/Waybar/wiki/Module:-CPU);
-- [Memory](https://github.com/Alexays/Waybar/wiki/Module:-Memory);
 - [Battery](https://github.com/Alexays/Waybar/wiki/Module:-Battery);
 - [Clock](https://github.com/Alexays/Waybar/wiki/Module:-Clock);
 - [User](https://github.com/Alexays/Waybar/wiki/Module:-User);
 - Power Menu: configured using the default waybar configuration;
-
-## Gambar Left
-
-The left bar is mainly used for the the workspaces, plus some minimal useful information.
-
-### Center Modules
-
-- [Niri Workspaces](https://github.com/Alexays/Waybar/wiki/Module:-Niri#workspaces);
-
-### Bottom Modules
-
-- [Gamemode](https://github.com/Alexays/Waybar/wiki/Module:-Gamemode);
-- [Backlight](https://github.com/Alexays/Waybar/wiki/Module:-Backlight);
-- [Network](https://github.com/Alexays/Waybar/wiki/Module:-Network);
-- [Idle Inhibitor](https://github.com/Alexays/Waybar/wiki/Module:-Idle-Inhibitor);
-- [Niri Language](https://github.com/Alexays/Waybar/wiki/Module:-Niri#language);
 
