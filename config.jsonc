@@ -1,5 +1,4 @@
-// -*- mode: jsonc -*-
-[{
+{
     "layer": "top",
     "height": 30, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
@@ -9,7 +8,12 @@
     "modules-left": [
         "tray",
         "power-profiles-daemon",
+        "niri/language",
         "bluetooth",
+        "backlight",
+        "network",
+        "idle_inhibitor",
+        "gamemode",
         "privacy",
     ],
     "tray": {
@@ -57,9 +61,40 @@
 		}
 	],
     },
+    "gamemode": {
+        "format-alt": "",
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon}",
+        "format-icons": [ "🌕", "🌖", "🌗",  "🌘", "🌑"],
+        "tooltip-format":"{percent}% {icon}",
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-linked": "",
+        "format-disconnected": "⚠",
+        "format-disabled": "",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) \n{ifname} via {gwaddr} ",
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": "",
+        }
+    },
+    "niri/language": {
+        "format": "{short} ({variant})",
+    },
+
     // ----- CENTER MODULES -------
     "modules-center": [
         "custom/media",
+        "niri/workspaces"
     ],
     "custom/media": {
         "format": "{text} {icon} ",
@@ -81,6 +116,20 @@
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
         "exec-if": "pgrep spotify",
     },
+    "niri/workspaces" : {
+            // To configure
+            "format": "{icon}",
+            "format-icons":{
+                "browser": "",
+                "steam": "",
+                "code": "",
+                "audio": "",
+                "chat": "",
+                "video": "", 
+		"default": ""
+            },
+            "disable-click" : true,
+        },
     // ------ RIGHT MODULES -------
     "modules-right": [
         "wireplumber",
@@ -154,69 +203,4 @@
             "hibernate": "systemctl hibernate",
         }
     },
-},
-{
-        "layer" : "top",
-        "position" : "left",
-        "name" : "gambar-left",
-        "margin-left": 5,
-        "margin-bottom": 30,
-        "spacing": 4,
-
-        // ------ BOTTOM SPACE -------
-        "modules-right": [
-            "gamemode",
-            "backlight",
-            "network",
-            "idle_inhibitor",
-            "niri/language",
-        ],
-        "gamemode": {
-            "format-alt": "",
-        },
-        "backlight": {
-            // "device": "acpi_video1",
-            "format": "{icon}",
-            "format-icons": [ "🌕", "🌖", "🌗",  "🌘", "🌑"],
-            "tooltip-format":"{percent}% {icon}",
-        },
-        "network": {
-            // "interface": "wlp2*", // (Optional) To force the use of this interface
-            "format-wifi": "",
-            "format-ethernet": "",
-            "format-linked": "",
-            "format-disconnected": "⚠",
-            "format-disabled": "",
-            "tooltip-format": "{ifname} via {gwaddr} ",
-            "tooltip-format-wifi": "{essid} ({signalStrength}%) \n{ifname} via {gwaddr} ",
-        },
-        "idle_inhibitor": {
-            "format": "{icon}",
-            "format-icons": {
-                "activated": "",
-                "deactivated": "",
-            }
-        },
-        "niri/language": {
-            "format": "{short} ({variant})",
-        },
-
-        // ------ CENTER SPACE ------
-        "modules-center" : [
-            "niri/workspaces"
-        ],
-        "niri/workspaces" : {
-            // To configure
-            "format": "{icon}",
-            "format-icons":{
-                "browser": "",
-                "steam": "",
-                "code": "",
-                "audio": "",
-                "chat": "",
-                "video": "", 
-		"default": ""
-            },
-            "disable-click" : true,
-        },
-}]
+}
