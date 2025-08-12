@@ -147,14 +147,13 @@
         "menu-file": "$HOME/.config/waybar/power_menu.xml",
         "menu-actions": {
             "logout": "niri msg action quit",
-            "shutdown": "shutdown",
+            "shutdown": "shutdown now",
             "reboot": "reboot",
             "lock": "swaylock",
             "suspend": "systemctl suspend",
             "hibernate": "systemctl hibernate",
         }
     },
-    "reload_style_on_change" : true
 },
 {
         "layer" : "top",
@@ -220,5 +219,4 @@
             },
             "disable-click" : true,
         },
-        "reload_style_on_change" : true
 }]
