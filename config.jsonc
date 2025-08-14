@@ -146,7 +146,7 @@
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml",
         "menu-actions": {
-            "logout": "niri msg action quit",
+            "logout": "niri msg action quit -s",
             "shutdown": "shutdown now",
             "reboot": "reboot",
             "lock": "swaylock",
