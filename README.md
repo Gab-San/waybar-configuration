@@ -4,8 +4,7 @@ Welcome!
 
 This is my waybar configuration. It is composed of a top bar and a left bar.
 
-![gambar-top-screenshot](./imgs/gambar-top-screenshot.png)
-![gambar-left-screenshot](./imgs/gambar-left-screenshot.png)
+![gambar-screenshot](./imgs/waybar.png)
 
 ## Gambar Top
 
